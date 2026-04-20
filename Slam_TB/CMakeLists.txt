@@ -38,6 +38,7 @@ install(
 )
 
 install(PROGRAMS
+  scripts/serial_bridge.py
   ${PROJECT_NAME}/mapping_with_known_poses.py
   DESTINATION lib/${PROJECT_NAME}
 )
