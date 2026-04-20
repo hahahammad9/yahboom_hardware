@@ -5,6 +5,11 @@ project(bumperbot_description)
 find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
 
+install(PROGRAMS
+  scripts/serial_bridge.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(
   DIRECTORY launch meshes models photos urdf rviz worlds
   DESTINATION share/${PROJECT_NAME}
