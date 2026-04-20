@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="bumperbot">
+<ros2_control name="RobotSystem" type="system">
+
+  <hardware>
+    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+  </hardware>
+
+  <joint name="back_right_joint">
+    <command_interface name="velocity">
+      <param name="min">-10</param>
+      <param name="max">10</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="back_left_joint">
+    <command_interface name="velocity">
+      <param name="min">-10</param>
+      <param name="max">10</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="front_left_steer_joint">
+    <command_interface name="position">
+      <param name="min">-0.5</param>
+      <param name="max">0.5</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="front_right_steer_joint">
+    <command_interface name="position">
+      <param name="min">-0.5</param>
+      <param name="max">0.5</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="front_left_wheel_joint">
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="front_right_wheel_joint">
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+</ros2_control>
+</robot>
